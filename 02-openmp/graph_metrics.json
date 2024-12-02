@@ -1,0 +1,14 @@
+{
+    "graph_metrics": {
+        "edges": 39994,
+        "largest_scc": {
+            "edges": 18742,
+            "nodes": 4317
+        },
+        "largest_wcc": {
+            "edges": 39994,
+            "nodes": 10876
+        },
+        "nodes": 10876
+    }
+}
