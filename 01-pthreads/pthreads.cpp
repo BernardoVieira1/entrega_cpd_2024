@@ -9,7 +9,7 @@
 #include <cmath>
 #include <pthread.h>
 #include <mutex>
-#include "json.hpp"
+#include <nlohmann/json.hpp>
 
 using json = nlohmann::json;
 
@@ -366,7 +366,7 @@ int main(int argc, char* argv[]) {
     }
 
     json result = calculateMetrics();
-    std::ofstream outfile("graph_metrics.json");
+    std::ofstream outfile("/app/data/graph_metrics.json");
     outfile << result.dump(4);
     outfile.close();
 
