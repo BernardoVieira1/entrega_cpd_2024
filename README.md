@@ -14,32 +14,41 @@ entrega_cpd_2024/\
 - **Docker** instalado na sua máquina. [Instalar Docker](https://docs.docker.com/get-docker/)
 - **Docker Compose** (opcional, se necessário para orquestração).
 
-### 01-pthreads
+### 01 - pthreads
 
-Implementação paralela utilizando **PThreads**.
+Implementação utilizando **PThreads**.
 
 #### Construir a Imagem Docker
 
 ```bash
-cd 01-pthreads
+cd 01 - pthreads
 docker build -t pthreads_app .
 
 docker run --rm -v $(pwd):/app/data pthreads_app
 
 cat graph_metrics.json  
+```
+### 02 - openmp
+Implementação utilizando **openMp**.
 
 
-cd 02-openmp
+```bash
+cd 02 - openmp
 docker build -t openmp_app .
 
 docker run --rm -v $(pwd):/app/data openmp_app
 
 cat graph_metrics.json  
+```
 
+### 03 - openmpi
+Implementação utilizando **openMpi**.
 
-cd 03-openmpi
+```bash
+cd 03 - openmpi
 docker build -t openmpi_app .
 
 docker run --rm -v $(pwd):/app/data openmpi_app
 
 cat graph_metrics.json  
+```
