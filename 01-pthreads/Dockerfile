@@ -18,7 +18,7 @@ WORKDIR /app/bin
 COPY pthreads.cpp /app/bin/
 
 # Compilar o código com PThreads
-RUN g++ -o pthreads_app pthreads.cpp -lpthread -std=c++11
+RUN g++ -o pthreads_app pthreads.cpp -lpthread -std=c++17
 
 # Garantir permissões de execução
 RUN chmod +x pthreads_app
