@@ -347,7 +347,7 @@ int main(int argc, char* argv[]) {
     MPI_Comm_rank(MPI_COMM_WORLD, &world_rank);
 
     // Mensagem de início
-    std::cout << "Processo " << world_rank << " de " << world_size << " iniciado." << std::endl;
+    std::cout << "Processo " << world_rank << " de " << world_size << " iniciado." << std::endl << std::flush;
 
     if (argc < 2) {
         if (world_rank == 0) {

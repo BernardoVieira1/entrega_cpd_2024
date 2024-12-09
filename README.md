@@ -46,9 +46,32 @@ Implementação utilizando **openMpi**.
 
 ```bash
 cd 03 - openmpi
-docker build -t openmpi_app .
 
-docker run --rm -v $(pwd):/app/data openmpi_app
+docker-compose build
 
-cat graph_metrics.json  
+docker-compose up -d
+```
+Isso levantará 4 contêineres: node1, node2, node3 e node4.
+
+Verifique se os contêineres estão ativos:
+```bash
+docker ps
+```
+Entre no contêiner node1 como mpiuser:
+
+```bash
+docker exec -it --user=mpiuser node1
+```
+Execute o aplicativo distribuído:
+
+```bash
+mpirun -np 4 -H node1,node2,node3,node4 ./openmpi_app /app/data input_graph.txt
+```
+Ao final, verifique o resultado.
+```bash
+cat /app/data/graph_metrics.json
+```
+Ou então, caso deseje ver no host, saia do bash do container e do container, e execute:
+```bash
+cat data/graph_metrics.json
 ```
